@@ -33,13 +33,16 @@ init() {
 add() {
 	git_dir=$(git rev-parse --show-toplevel)
 	file="$git_dir/track.pdfm"
-
+	local crdir="$PWD"
+	cd "$git_dir"
 	# Due to -n incomplete line may be read. This should be fine in most cases.
 	# https://unix.stackexchange.com/questions/482517/why-does-this-while-loop-not-recognize-the-last-line
 	while IFS= read -r line || [ -n "$line" ];
 	do
 		git add "$line"
 	done < "$file"
+	
+	cd $crdir
 
 	exit
 }
