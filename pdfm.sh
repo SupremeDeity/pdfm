@@ -15,7 +15,7 @@ print_help() {
 
 # Prints PDFM version to screen
 print_version() {
-	echo "PDFM v0.2.1"
+	echo "PDFM v0.3.0"
 	exit
 }
 
@@ -48,9 +48,8 @@ add() {
 		# https://unix.stackexchange.com/questions/482517/why-does-this-while-loop-not-recognize-the-last-line
 		while IFS= read -r line || [ -n "$line" ];
 		do
-			if [ "$line" = "" ]; then
-				echo "Warning: Empty line detected. Please remove any empty lines or populate track.pdfm if you have not done it already."
-			else
+			if [ -n "$line" ]; then
+				[[ $line =~ ^#.* ]] && continue
 				git add "$line"
 			fi
 		done < "$file"

@@ -21,8 +21,7 @@ pdfm init
 
 **Note:** This will reinitialize the git repository if it already exists. You can just create a `track.pdfm` in your git home directory instead of using the command to avoid this.
 
-#### Trackfile
----
+## Trackfile
 The track file `track.pdfm` is basically the opposite of what a `.gitignore` file is. This file __must__ include paths to everything that needs to tracked. This automatically gets created in the git directory when you run `pdfm init`.
 
 You can either include a single file or a whole directory:
@@ -32,7 +31,10 @@ You can either include a single file or a whole directory:
 /dir2/file
 ```
 
-**Staging:**
+## Comments
+Empty lines or any lines starting with "#" are ignored as of **v0.3.0**
+
+## Staging
 
 To stage all tracked files run the following command:
 ```
