@@ -2,6 +2,8 @@
 
 ##### Note: pdfm is a new and undertested project, if you encounter any bugs please open a issue.
 
+<img src="./pdfm.svg" height="1%" width="60%" />
+
 ## Installation
 As of right now the only way to install pdfm is using `git clone`:
 ```
